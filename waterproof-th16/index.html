@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+        <!-- SEO -->
+        
+        <title> Modding a Sonoff TH10&#x2F;16 for Outdoor Temperature Logging | Word Boutique </title>
+        
+
+        <!-- Enable responsiveness on mobile devices-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" >
+
+        <!-- js -->
+        <script src="https:&#x2F;&#x2F;word.boutique/theme_selector.js"></script>
+
+        <!--  css -->
+        <link id="themeCSS" rel="stylesheet"
+                            href="https:&#x2F;&#x2F;word.boutique/default.css"
+                            />
+
+        <!-- fonts -->
+        <!-- preload  -->
+        <link rel="preload" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,500,500i,600,700,800,900|Raleway" as="style">
+        <link rel="preload"  href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" as="style" >
+        <!-- load -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:200,300,300i,400,500,500i,600,700,800,900|Raleway">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        
+<link rel="stylesheet" href="https:&#x2F;&#x2F;word.boutique/style.css">
+
+    </head>
+
+    <body onload="main();">
+        
+        
+<input type="checkbox" id="openSidebarMenu" class="openSidebarMenu">
+<label class="menu cross menu--1" for="openSidebarMenu">
+    <svg viewBox="0 0 75 75" xmlns="https://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="30" />
+        <path class="line--1" d="M0 40h62c13 0 6 28-4 18L35 35" />
+        <path class="line--2" d="M0 50h70" />
+        <path class="line--3" d="M0 60h62c13 0 6-28-4-18L35 65" />
+    </svg>
+</label>
+
+<div id="sidebarMenu">
+    <div class="menu_wrapper">
+        <ul class="sidebarMenuInner">
+            <li>
+                <a href="https:&#x2F;&#x2F;word.boutique" >Word Boutique</a>
+                <div class="menu_div" ></div>
+            </li>
+            
+            <li><a href="https://word.boutique" target="_blank">word.boutique</a></li>
+            
+            
+<li><a href="https:&#x2F;&#x2F;word.boutique&#x2F;categories&#x2F;comics&#x2F;">Comics</a></li>
+<li><a href="https:&#x2F;&#x2F;word.boutique&#x2F;categories&#x2F;electronics&#x2F;">Electronics</a></li>
+
+            
+            <li><a href="https://github.com/emosenkis" target="_blank" >emosenkis</a><i class="fab fa-github" ></i></li>
+            
+            
+            
+            
+            
+            <li><a href="https://www.linkedin.com/in/emosenkis" target="_blank">emosenkis</a><i class="fab fa-linkedin" ></i></li>
+            
+            
+            
+            
+            <li><a href="mailto:eitan@mosenkis.net?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
+            
+            
+            <li><a href="https:&#x2F;&#x2F;word.boutique/atom.xml" target ="_blank">atom</a><i class="fas fa-rss" ></i></li>
+            
+        </ul>
+    </div>
+</div>
+
+        
+
+        
+<nav id="overlord" class="overlord" >
+  
+<figure class="mini_logo ">
+    <a href="https:&#x2F;&#x2F;word.boutique" style="background-image: url(https:&#x2F;&#x2F;word.boutique/img/..&#x2F;images&#x2F;portrait.jpg)"></a>
+</figure>
+<h5>
+    <a href="https:&#x2F;&#x2F;word.boutique">Word Boutique</a>
+</h5>
+
+  
+
+
+
+
+
+</nav>
+
+<section class="post_container">
+  <article>
+    
+
+      <h1 class="article_title"><a href="https:&#x2F;&#x2F;word.boutique&#x2F;waterproof-th16&#x2F;" id="article_link">Modding a Sonoff TH10&#x2F;16 for Outdoor Temperature Logging</a></h1>
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li>
+        <time class="article_time"  datetime="2020-12-16">December 16, 2020</time>
+    </li>
+    <span class="dotDivider"></span>
+    <li> 43 words </li>
+    <span class="dotDivider" ></span>
+    <li> 1 min </li>
+</ul>
+
+      <p><img src="/th16-not-fit.jpg" alt="" /></p>
+<p><img src="/th16-fail.jpg" alt="" /></p>
+<p><img src="/th16-no-sensor.png" alt="" /></p>
+<p><img src="/th16-improved.jpg" alt="" /></p>
+<p>Future work:</p>
+<ul>
+<li>Install it outside to replace the current analog timer.</li>
+<li>Add a capacitve touch button for easy local override (<a href="https://github.com/esphome/feature-requests/issues/92">GitHub Issue for
+support in ESPHome</a>).</li>
+</ul>
+
+      
+
+
+
+
+
+
+
+
+<p>categories: <a href="https:&#x2F;&#x2F;word.boutique&#x2F;categories&#x2F;electronics&#x2F;">electronics</a></p>
+
+
+<p>tags: <a href="https:&#x2F;&#x2F;word.boutique&#x2F;tags&#x2F;home-automation&#x2F;">home automation</a>, <a href="https:&#x2F;&#x2F;word.boutique&#x2F;tags&#x2F;internet-of-things&#x2F;">internet of things</a></p>
+
+
+  </article>
+</section>
+
+
+         
+
+        <footer>
+            
+            
+<figure class="mini_logo ">
+    <a href="https:&#x2F;&#x2F;word.boutique" style="background-image: url(https:&#x2F;&#x2F;word.boutique/img/..&#x2F;images&#x2F;portrait.jpg)"></a>
+</figure>
+<h5>
+    <a href="https:&#x2F;&#x2F;word.boutique">Word Boutique</a>
+</h5>
+
+            
+<ul class="social_list foot_list" >
+    
+    <li class="button extra_small font_faint"><a href="https://word.boutique" target="_blank">word.boutique</a></li>
+    
+    
+    <li class="button extra_small font_faint"><a href="https://github.com/emosenkis" target="_blank" >emosenkis</a><i class="fab fa-github" ></i></li>
+    
+    
+    
+    
+    
+    
+    
+    
+    <li class="button extra_small font_faint"><a href="https://www.linkedin.com/in/emosenkis" target="_blank">emosenkis</a><i class="fab fa-linkedin" ></i></li>
+    
+    
+    
+    
+    <li class="button extra_small font_faint"><a href="mailto:eitan@mosenkis.net?subject=hi" target="_blank">say hello</a><i class="fas fa-envelope" ></i></li>
+    
+    
+    <li class="button extra_small font_faint"><a href="https:&#x2F;&#x2F;word.boutique/atom.xml" target ="_blank">atom</a><i class="fas fa-rss" ></i></li>
+    
+</ul>
+
+            
+<select id="theme_selector" size=1>
+    <option value="default" selected>default</option>
+    
+</select>
+
+            
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+	<title>Word Boutique</title>
+	<subtitle>Eitan Mosenkis&#x27;s ramblings about tech, business, and life</subtitle>
+	<link href="https://word.boutique/atom.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://word.boutique"/>
+	<generator uri="https://www.getzola.org/">Zola</generator>
+	<updated>2020-12-16T00:00:00+00:00</updated>
+	<id>https://word.boutique/atom.xml</id>
+	<entry xml:lang="en">
+		<title>Modding a Sonoff TH10&#x2F;16 for Outdoor Temperature Logging</title>
+		<published>2020-12-16T00:00:00+00:00</published>
+		<updated>2020-12-16T00:00:00+00:00</updated>
+		<link href="https://word.boutique/waterproof-th16/" type="text/html"/>
+		<id>https://word.boutique/waterproof-th16/</id>
+		<content type="html">&lt;p&gt;&lt;img src=&quot;&#x2F;th16-not-fit.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;th16-fail.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;th16-no-sensor.png&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;&lt;img src=&quot;&#x2F;th16-improved.jpg&quot; alt=&quot;&quot; &#x2F;&gt;&lt;&#x2F;p&gt;
+&lt;p&gt;Future work:&lt;&#x2F;p&gt;
+&lt;ul&gt;
+&lt;li&gt;Install it outside to replace the current analog timer.&lt;&#x2F;li&gt;
+&lt;li&gt;Add a capacitve touch button for easy local override (&lt;a href=&quot;https:&#x2F;&#x2F;github.com&#x2F;esphome&#x2F;feature-requests&#x2F;issues&#x2F;92&quot;&gt;GitHub Issue for
+support in ESPHome&lt;&#x2F;a&gt;).&lt;&#x2F;li&gt;
+&lt;&#x2F;ul&gt;
+</content>
+	</entry>
+	<entry xml:lang="en">
+		<title>Word Boutique</title>
+		<published>2019-02-22T00:00:00+00:00</published>
+		<updated>2019-02-22T00:00:00+00:00</updated>
+		<link href="https://word.boutique/word-boutique/" type="text/html"/>
+		<id>https://word.boutique/word-boutique/</id>
+		<content type="html">&lt;p&gt;&lt;a href=&quot;&#x2F;word-boutique.png&quot;&gt;&lt;img src=&quot;&#x2F;word-boutique.png&quot; alt=&quot;word boutique&quot; &#x2F;&gt;&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;
+</content>
+	</entry>
+</feed>

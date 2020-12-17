@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://word.boutique/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/categories/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/categories/comics/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/categories/electronics/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/page/1/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/tags/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/tags/home-automation/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/tags/internet-of-things/</loc>
+    </url>
+    <url>
+        <loc>https://word.boutique/waterproof-th16/</loc>
+        <lastmod>2020-12-16</lastmod>
+    </url>
+    <url>
+        <loc>https://word.boutique/word-boutique/</loc>
+        <lastmod>2019-02-22</lastmod>
+    </url>
+</urlset>
