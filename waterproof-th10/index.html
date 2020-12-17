@@ -8,7 +8,7 @@
 
         <!-- SEO -->
         
-        <title> Word Boutique </title>
+        <title> Modding a Sonoff TH10&#x2F;TH16 for Outdoor Temperature Logging | Word Boutique </title>
         
 
         <!-- Enable responsiveness on mobile devices-->
@@ -85,21 +85,72 @@
         
 
         
-<header class="header">
-  <figure class="user_logo">
-    <a href="https:&#x2F;&#x2F;word.boutique" style="background-image: url(https:&#x2F;&#x2F;word.boutique/img/..&#x2F;images&#x2F;portrait.jpg"></a>
-  </figure>
-  <h2 class="site_title">internet of things</h2>
-</header>
-<section class="post_list">
+<nav id="overlord" class="overlord" >
   
-  <article id="waterproof-th10" class="post_list_item">
-    <h1 class="article_title" >
-      <a href="https:&#x2F;&#x2F;word.boutique&#x2F;waterproof-th10&#x2F;"  id="article_link" >Modding a Sonoff TH10&#x2F;TH16 for Outdoor Temperature Logging</a>
-    </h1>
+<figure class="mini_logo ">
+    <a href="https:&#x2F;&#x2F;word.boutique" style="background-image: url(https:&#x2F;&#x2F;word.boutique/img/..&#x2F;images&#x2F;portrait.jpg)"></a>
+</figure>
+<h5>
+    <a href="https:&#x2F;&#x2F;word.boutique">Word Boutique</a>
+</h5>
+
+  
+
+
+
+
+
+</nav>
+
+<section class="post_container">
+  <article>
+    
+
+      <h1 class="article_title"><a href="https:&#x2F;&#x2F;word.boutique&#x2F;waterproof-th10&#x2F;" id="article_link">Modding a Sonoff TH10&#x2F;TH16 for Outdoor Temperature Logging</a></h1>
+      
+<ul class="frontmatter frontmatter_page" id="frontmatter">
+    <li>
+        <time class="article_time"  datetime="2020-12-18">December 18, 2020</time>
+    </li>
+    <span class="dotDivider"></span>
+    <li> 496 words </li>
+    <span class="dotDivider" ></span>
+    <li> 3 min </li>
+</ul>
+
+      <p>Some time ago, I bought a <a href="https://www.itead.cc/sonoff-th.html">Sonoff TH10/TH16</a> with the DS18B20 waterproof temperature sensor add-on and <a href="https://www.itead.cc/smart-home/sonoff-ip66.html">IP66 waterproof case</a>. I didn't need the smart switch capabilities at the time, I just wanted to log the outdoor temperature. Unfortunately, I soon discovered that the waterproof case doesn't leave enough space for the temperature sensor to be plugged into the 2.5mm jack situated on the side of the PCBA:</p>
+<p><img src="/th10-not-fit.jpg" alt="temperature sensor or waterproof case: choose one" /></p>
+<p>After this discovery, the whole kit gathered dust on a shelf until this week when, after getting frustrated with the mechanical timer that controls our outdoor path lighting, I decided to try to replace it with the TH10. A few hours later, I had successfully configured <a href="https://esphome.io/">ESPHome</a> to turn the lights on and off at the appropriate times with as little reliance <a href="https://github.com/esphome/feature-requests/issues/515">as possible</a> on the network. I was reluctant to install it without at least trying to get the temperature probe connected. Eager to try out my new Pinecil soldering iron, I spent an unreasonable amount of time trying to desolder the 2.5mm jack. With what I hoped was only minor damage to the jack, I eventually succeeded in removing it from the PCB and reconnecting it on the far end of some jumper wires:</p>
+<p><img src="/th10-fail.jpg" alt="it's not pretty but it should work, right?" /></p>
+<p>However, when I put down the soldering iron and plugged the board in, it could no longer find the temperature probe:</p>
+<p><img src="/th10-no-sensor.png" alt="what do you mean, not found?!" /></p>
+<p>After countless failed attempts to diagnose the problem with a multimeter and then to fix it by sheer trial and error, I realized that the much more obvious solution all along was to do away with the 2.5mm connection and solder the sensor directly to the pads it used to occupy on the PCB. Fortunately, the sensor's cable was made of three color-coded insulated stranded wires, all of which my wire stripper dealt with unusually easily. With <a href="https://tinkerman.cat/post/sonoff-th10-th16-sensors-displays-actuators/">a little help</a> from a fellow tinkerer which was then verified with a multimeter, I was able to correctly identify which wire corresponded to which pad on the PCB. With my handy Pinecil in hand and a few short lengths of heat shrink tubing (which responded nicely to the soldering iron set to 180°C), I was able to make a nice clean connection from the sensor to the PCB:</p>
+<p><img src="/th10-improved.jpg" alt="it's certainly much prettier than before, but will it work?" /></p>
+<p>With baited breath, I once again powered on the board and watched the log output. This time it worked!</p>
+<p>Future work:</p>
+<ul>
+<li>Install it outside to replace the current analog timer.</li>
+<li>Add a capacitve touch button for easy local override (<a href="https://github.com/esphome/feature-requests/issues/92">GitHub Issue for support in ESPHome</a>).</li>
+</ul>
+
+      
+
+
+
+
+
+
+
+
+<p>categories: <a href="https:&#x2F;&#x2F;word.boutique&#x2F;categories&#x2F;electronics&#x2F;">electronics</a></p>
+
+
+<p>tags: <a href="https:&#x2F;&#x2F;word.boutique&#x2F;tags&#x2F;home-automation&#x2F;">home automation</a>, <a href="https:&#x2F;&#x2F;word.boutique&#x2F;tags&#x2F;internet-of-things&#x2F;">internet of things</a>, <a href="https:&#x2F;&#x2F;word.boutique&#x2F;tags&#x2F;pinecil&#x2F;">pinecil</a></p>
+
+
   </article>
-  
 </section>
+
 
          
 
