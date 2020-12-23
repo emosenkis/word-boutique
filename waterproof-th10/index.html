@@ -113,25 +113,39 @@
         <time class="article_time"  datetime="2020-12-18">December 18, 2020</time>
     </li>
     <span class="dotDivider"></span>
-    <li> 496 words </li>
+    <li> 1214 words </li>
     <span class="dotDivider" ></span>
-    <li> 3 min </li>
+    <li> 7 min </li>
 </ul>
 
-      <p>Some time ago, I bought a <a href="https://www.itead.cc/sonoff-th.html">Sonoff TH10/TH16</a> with the DS18B20 waterproof temperature sensor add-on and <a href="https://www.itead.cc/smart-home/sonoff-ip66.html">IP66 waterproof case</a>. I didn't need the smart switch capabilities at the time, I just wanted to log the outdoor temperature. Unfortunately, I soon discovered that the waterproof case doesn't leave enough space for the temperature sensor to be plugged into the 2.5mm jack situated on the side of the PCBA:</p>
-<p><img src="/th10-not-fit.jpg" alt="temperature sensor or waterproof case: choose one" /></p>
-<p>After this discovery, the whole kit gathered dust on a shelf until this week when, after getting frustrated with the mechanical timer that controls our outdoor path lighting, I decided to try to replace it with the TH10. A few hours later, I had successfully configured <a href="https://esphome.io/">ESPHome</a> to turn the lights on and off at the appropriate times with as little reliance <a href="https://github.com/esphome/feature-requests/issues/515">as possible</a> on the network. I was reluctant to install it without at least trying to get the temperature probe connected. Eager to try out my new Pinecil soldering iron, I spent an unreasonable amount of time trying to desolder the 2.5mm jack. With what I hoped was only minor damage to the jack, I eventually succeeded in removing it from the PCB and reconnecting it on the far end of some jumper wires:</p>
-<p><img src="/th10-fail.jpg" alt="it's not pretty but it should work, right?" /></p>
+      <p>Some time ago, I bought a <a href="https://www.itead.cc/sonoff-th.html">Sonoff TH10/TH16</a> with the DS18B20 waterproof temperature sensor add-on and <a href="https://www.itead.cc/smart-home/sonoff-ip66.html">Sonoff IP66 waterproof case</a>. I didn't need the smart switch capabilities at the time, I just wanted to log the outdoor temperature. Unfortunately, I soon discovered that the waterproof case doesn't leave enough space for the temperature sensor to be plugged into the 2.5mm jack situated on the side of the PCBA<span id="continue-reading"></span>:</p>
+<p><img src="/th10-not-fit.jpg" alt="picture showing that the TH10 does not fit into the Sonoff IP66 case with a sensor plugged into the 2.5mm jack" title="temperature sensor or waterproof case: choose one" /></p>
+<p>After this discovery, the whole kit gathered dust on a shelf until this week when, after getting frustrated with the mechanical timer that controls our outdoor path lighting, I decided to try to replace it with the TH10. A few hours later, I had successfully <a href="https://gist.github.com/emosenkis/dfca4f1653efb0bc8c1c74d26aa12249">configured</a> <a href="https://esphome.io/">ESPHome</a> to turn the lights on and off at the appropriate times with as little reliance <a href="https://github.com/esphome/feature-requests/issues/515">as possible</a> on the network. I was reluctant to install it without at least trying to get the temperature probe connected. Eager to try out my new Pinecil soldering iron, I spent an unreasonable amount of time trying to desolder the 2.5mm jack. With what I hoped was only minor damage to the jack, I eventually succeeded in removing it from the PCB and reconnecting it on the far end of some jumper wires:</p>
+<p><img src="/th10-fail.jpg" alt="picture of the TH10 with the 2.5mm jack soldered to the PCB via jumper wires" title="it's not pretty but it should work, right?" /></p>
 <p>However, when I put down the soldering iron and plugged the board in, it could no longer find the temperature probe:</p>
-<p><img src="/th10-no-sensor.png" alt="what do you mean, not found?!" /></p>
+<p><img src="/th10-no-sensor.png" alt="screenshot of the TH10's Serial output with the line Found no sensors!" title="what do you mean, not found?!" /></p>
 <p>After countless failed attempts to diagnose the problem with a multimeter and then to fix it by sheer trial and error, I realized that the much more obvious solution all along was to do away with the 2.5mm connection and solder the sensor directly to the pads it used to occupy on the PCB. Fortunately, the sensor's cable was made of three color-coded insulated stranded wires, all of which my wire stripper dealt with unusually easily. With <a href="https://tinkerman.cat/post/sonoff-th10-th16-sensors-displays-actuators/">a little help</a> from a fellow tinkerer which was then verified with a multimeter, I was able to correctly identify which wire corresponded to which pad on the PCB. With my handy Pinecil in hand and a few short lengths of heat shrink tubing (which responded nicely to the soldering iron set to 180°C), I was able to make a nice clean connection from the sensor to the PCB:</p>
-<p><img src="/th10-improved.jpg" alt="it's certainly much prettier than before, but will it work?" /></p>
-<p>With baited breath, I once again powered on the board and watched the log output. This time it worked!</p>
-<p>Future work:</p>
+<p><img src="/th10-improved.jpg" alt="picture of the TH10 after soldering the temperature sensor cable directly to the PCB" title="it's certainly much prettier than before, but will it work?" /></p>
+<p>With baited breath, I once again powered on the board and watched the log output. This time it worked! The next step was installing it outside. The installation, which I estimated at 30-40 minutes and budgeted 90 minutes for, ended up taking me almost three hours. The two unexpected issues that added the majority of the extra time were:</p>
 <ul>
-<li>Install it outside to replace the current analog timer.</li>
-<li>Add a capacitve touch button for easy local override (<a href="https://github.com/esphome/feature-requests/issues/92">GitHub Issue for support in ESPHome</a>).</li>
+<li>
+<p>There were four wires coming into the box holding the mechanical timer that I was replacing. Two of them were bridged together and the remaining three were connected to the timer in more than one place. Two were brown, which should be live, one was blue, which should be neutral, and one was yellow &amp; green, which should be ground:</p>
+<p><img src="/timer-wiring.jpg" alt="picture of the wiring before I disconnected the mechanical timer" title="it's a good thing I took this picture before getting started!" /></p>
+<p>Why is live bridged to ground? Why is neutral connected to the switch?</p>
+</li>
+<li>
+<p><strong>The Sonoff IP66 case does not leave any space for wires between the opening and the terminals!</strong> While I managed, with great difficulty, to force the TH10 into the case after connecting the wires, it proved extremely difficult to remove and re-insert wires once it was in the case.</p>
+</li>
 </ul>
+<p>After talking on the phone with the contractor that installed the electrical timer, I understood that the two wires that had been bridged together were both neutral and had previously been connected to a different timer that was able to switch both the live and neutral lines. There was no ground connection, which became important later on. Armed with this knowledge, I finally managed to finish the installation, making a positive outcome from a long and frustratingprocess... or so I thought at the time.</p>
+<p>Unfortunately, this story doesn't have a happy ending. After working correctly for all of an hour or two, the circuit with the TH10-controlled path and stair lighting tripped the whole-house <a href="https://en.wikipedia.org/wiki/Residual-current_device" title="residual-current device">RCD</a>, plunging us into darkness. Thinking that it was just a random nuisance trip, I reset the RCD. It didn't trip immediately so I assumed it was just a fluke. A few hours later, it tripped again, and again every few hours after that unless I switched off the entire circuit, also cutting power to all of our kitchen countertop outlets.</p>
+<p>I was baffled by this behavior since the only box I had opened did not have a ground wire, and therefore should have been incapable of leaking any current at all, much less the 30mA/6.9W that the RCD was rated at. After determining that the RCD continue to trip even when the TH10 kept the lights off, I eventually gave up on understanding the problem and asked the contractor to come and bail me out. After failing to find any obvious path for the leakage current, he struggled to re-assemble the TH10 due to severe lack of space for wires. Not having brought flexible wire with him, we agreed that he would reinstall the mechanical timer. This completed, the RCD stopped tripping... until the next morning, when it tripped continously until I again turned off the entire outdoor circuit from the main electric panel. I was able to get power back in the kitchen by disconnecting the neutral line leading from the TH10 to the lights themselves. After again calling the contractor and watching him methodically disconnect all the lights, then reconnect them one at a time, the cause was determined to be water that had gotten into the junction box connecting the last two lights on the circuit. The TH10 is still the apparent cause of the transient RCD trips since they persisted for as long as the TH10 was installed (during which time it didn't rain at all).</p>
+<h2 id="conclusions">Conclusions</h2>
+<ul>
+<li>Never try to use a Sonoff IP66 case with a TH10 or any other device that leaves so little clearance for connecting the wires.</li>
+<li>Be very cautious about using any TH10/TH16 and test it for current leakage before investing time and energy configuring and installing it.</li>
+</ul>
+<p>I think it will be quite a while before I have the desire to undertake any project involving mains electricity again.</p>
 
       
 
